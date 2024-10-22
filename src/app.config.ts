@@ -1,5 +1,12 @@
 export default defineAppConfig({
-  pages: ["pages/index/index", "pages/login/index", "pages/personal/index"],
+  pages: [
+    "pages/index/index",
+    "pages/login/index",
+    "pages/personal/index",
+    "pages/cart/index",
+    "pages/custom/index",
+    "pages/detail/index",
+  ],
 
   window: {
     backgroundTextStyle: "light",
@@ -16,13 +23,25 @@ export default defineAppConfig({
     list: [
       {
         pagePath: "pages/index/index",
-        text: "Home",
+        text: "商城",
         iconPath: "assets/icons/home.png",
         selectedIconPath: "assets/icons/home_selected.png",
       },
       {
+        pagePath: "pages/custom/index",
+        text: "定制",
+        iconPath: "assets/icons/custom.png",
+        selectedIconPath: "assets/icons/custom_selected.png",
+      },
+      {
+        pagePath: "pages/cart/index",
+        text: "购物车",
+        iconPath: "assets/icons/cart.png",
+        selectedIconPath: "assets/icons/cart_selected.png",
+      },
+      {
         pagePath: "pages/personal/index",
-        text: "Personal",
+        text: "个人",
         iconPath: "assets/icons/personal.png",
         selectedIconPath: "assets/icons/personal_selected.png",
       },

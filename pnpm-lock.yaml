@@ -38,6 +38,7 @@ specifiers:
   react-refresh: ^0.14.0
   sass: ^1.75.0
   stylelint: ^16.4.0
+  taro-ui: ^3.3.0
   terser: ^5.30.4
   typescript: ^5.4.5
   vite: ^4.2.0
@@ -63,6 +64,7 @@ dependencies:
   node-forge: 1.3.1
   react: 18.3.1
   react-dom: 18.3.1_react@18.3.1
+  taro-ui: 3.3.0_sgq37lpmh7op2bzjpkdqbkimxu
 
 devDependencies:
   '@babel/core': 7.25.8
@@ -4278,6 +4280,10 @@ packages:
       is-data-view: 1.0.1
     dev: true
 
+  /dayjs/1.11.13:
+    resolution: {integrity: sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==}
+    dev: false
+
   /debug/3.2.7:
     resolution: {integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==}
     peerDependencies:
@@ -6906,7 +6912,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: true
 
   /property-expr/2.0.6:
     resolution: {integrity: sha512-SVtmxhRE/CGkn3eZY1T6pC8Nln6Fr/lu1mKSgRud0eC73whjGfoAogbn78LkD8aFL0zz3bAFerKSnOl7NlErBA==}
@@ -6981,7 +6986,23 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: true
+
+  /react-native-animatable/1.3.3:
+    resolution: {integrity: sha512-2ckIxZQAsvWn25Ho+DK3d1mXIgj7tITkrS4pYDvx96WyOttSvzzFeQnM2od0+FUMzILbdHDsDEqZvnz1DYNQ1w==}
+    dependencies:
+      prop-types: 15.8.1
+    dev: false
+
+  /react-native-modal/13.0.1_react@18.3.1:
+    resolution: {integrity: sha512-UB+mjmUtf+miaG/sDhOikRfBOv0gJdBU2ZE1HtFWp6UixW9jCk/bhGdHUgmZljbPpp0RaO/6YiMmQSSK3kkMaw==}
+    peerDependencies:
+      react: '*'
+      react-native: '>=0.65.0'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-native-animatable: 1.3.3
+    dev: false
 
   /react-reconciler/0.29.0_react@18.3.1:
     resolution: {integrity: sha512-wa0fGj7Zht1EYMRhKWwoo1H9GApxYLBuhoAuXN0TlltESAjDssB+Apf0T/DngVqaMyPypDmabL37vw/2aRM98Q==}
@@ -7695,6 +7716,43 @@ packages:
       to-buffer: 1.1.1
       xtend: 4.0.2
     dev: true
+
+  /taro-ui/3.3.0_sgq37lpmh7op2bzjpkdqbkimxu:
+    resolution: {integrity: sha512-M4tf2OEy1BzmeFyvF0kFOgzzW1Lc86TlQ5UwZh4cNMkuViqGId/DLqY0iMlqAjfXstRn0x4HaFFw91xfLqkPzg==}
+    peerDependencies:
+      '@tarojs/components': '>=3'
+      '@tarojs/plugin-platform-alipay': '>=3'
+      '@tarojs/plugin-platform-h5': '>=3'
+      '@tarojs/plugin-platform-jd': '>=3'
+      '@tarojs/plugin-platform-qq': '>=3'
+      '@tarojs/plugin-platform-swan': '>=3'
+      '@tarojs/plugin-platform-tt': '>=3'
+      '@tarojs/plugin-platform-weapp': '>=3'
+      '@tarojs/react': '>=3'
+      '@tarojs/taro': '>=3'
+      '@tarojs/taro-rn': '>=3'
+      react: '>=16.13.0'
+      react-dom: '>=16.13.0'
+      react-native: '>=0.62.0'
+    dependencies:
+      '@tarojs/components': 4.0.6_7z63fxq7lelrrck4pjfp42uece
+      '@tarojs/plugin-platform-alipay': 4.0.6_@tarojs+shared@4.0.6
+      '@tarojs/plugin-platform-h5': 4.0.6_sgk5npeezsxwwrudwqukekrspe
+      '@tarojs/plugin-platform-jd': 4.0.6_@tarojs+shared@4.0.6
+      '@tarojs/plugin-platform-qq': 4.0.6_bcvxfrzcgx2rkoebsyvajr5kjm
+      '@tarojs/plugin-platform-swan': 4.0.6_@tarojs+shared@4.0.6
+      '@tarojs/plugin-platform-tt': 4.0.6_@tarojs+shared@4.0.6
+      '@tarojs/plugin-platform-weapp': 4.0.6_@tarojs+shared@4.0.6
+      '@tarojs/react': 4.0.6_react@18.3.1
+      '@tarojs/taro': 4.0.6_umjel5bhvelafjkceixvpdznkm
+      classnames: 2.5.1
+      dayjs: 1.11.13
+      lodash: 4.17.21
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1_react@18.3.1
+      react-native-modal: 13.0.1_react@18.3.1
+    dev: false
 
   /terser/5.34.1:
     resolution: {integrity: sha512-FsJZ7iZLd/BXkz+4xrRTGJ26o/6VTjQytUk8b8OxkwcD2I+79VPJlz7qss1+zE7h8GNIScFqXcDyJ/KqBYZFVA==}

@@ -42,7 +42,7 @@ export default defineConfig<"vite">(async (merge, {}) => {
     h5: {
       publicPath: "/",
       staticDirectory: "static",
-
+      esnextModules: ["taro-ui"],
       miniCssExtractPluginOption: {
         ignoreOrder: true,
         filename: "css/[name].[hash].css",
