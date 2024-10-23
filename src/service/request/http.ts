@@ -40,17 +40,20 @@ class ApiService {
         Taro.reLaunch({
           url: "/pages/login/index", // 替换为你的登录页面路径
         });
-        throw new Error(response.data["msg"] || "请求失败");
+        throw new Error(response.data["errmsg"] || "请求失败");
       } else if (response.data) {
         const backend = response.data;
-        if (backend["code"] === 401) {
+        if (backend["errno"] === 401) {
           // 跳到login页面
           Taro.reLaunch({
             url: "/pages/login/index", // 替换为你的登录页面路径
           });
         }
-        Taro.showToast({ title: backend["msg"] || "操作失败", icon: "none" });
-        throw new Error(backend["msg"] || "请求失败");
+        Taro.showToast({
+          title: backend["errmsg"] || "操作失败",
+          icon: "none",
+        });
+        throw new Error(backend["errmsg"] || "请求失败");
       } else {
         return response;
       }

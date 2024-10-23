@@ -28,20 +28,24 @@ const Index = () => {
 
   const tabList = [
     {
-      title: "标签页1",
+      title: "小学",
       sub: [
         {
-          title: "次1",
+          title: "一年级",
           list: [1, 2, 3],
         },
         {
-          title: "次2",
-          list: [1, 2, 3, 4],
+          title: "二年级",
+          list: [1, 2, 3],
+        },
+        {
+          title: "二年级",
+          list: [1, 2, 3],
         },
       ],
     },
     {
-      title: "标签页2",
+      title: "初中",
       sub: [
         { title: "次1", list: [1, 2, 3, 4] },
         {
@@ -55,7 +59,7 @@ const Index = () => {
       ],
     },
     {
-      title: "标签页3",
+      title: "高中",
       sub: [
         {
           title: "次1",
