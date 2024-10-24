@@ -3,7 +3,7 @@ import { AtTabs, AtTabsPane } from "taro-ui";
 import { useEffect, useState } from "react";
 import "./index.scss";
 import { CataItem, getCataLog } from "../../apis/resource";
-import ClassItem from "./components/ClassItem";
+import Package from "../../components/Package";
 
 const Index = () => {
   const [state, setState] = useState({
@@ -92,7 +92,9 @@ const Index = () => {
     });
   }
 
-  const [books, setBooks] = useState<{ title: string; image: string }[]>([]);
+  const [books, setBooks] = useState<Array<{ title: string; image: string }>>(
+    []
+  );
 
   function fetchBookData() {
     const booksRes = [
@@ -166,34 +168,29 @@ const Index = () => {
                 current={state.subCurrent}
                 index={subIndex}
               >
-                <AtTabs
-                  scroll={tabList[index].list.length > 5}
-                  tabDirection="vertical"
-                  height="87vh"
-                  current={state.thirdCurrent}
-                  tabList={tabList[index].list[subIndex].list}
-                  onClick={handleThirdClick}
-                >
-                  {tabList[index].list[subIndex].list.map(
-                    (third, thirdIndex) => (
-                      <AtTabsPane
-                        tabDirection="vertical"
-                        key={thirdIndex}
-                        current={state.thirdCurrent}
-                        index={thirdIndex}
-                      >
-                        <View style="display: grid; grid-template-rows: 1fr; grid-template-columns: 1fr 1fr 1fr;">
-                          {books.map((item) => (
-                            <ClassItem
-                              image={item.image}
-                              name={item.title}
-                            ></ClassItem>
-                          ))}
-                        </View>
-                      </AtTabsPane>
-                    )
-                  )}
-                </AtTabs>
+                <View style="margin-top: 10px;">
+                  <AtTabs
+                    scroll={tabList[index].list.length > 5}
+                    tabDirection="vertical"
+                    height="85vh"
+                    current={state.thirdCurrent}
+                    tabList={tabList[index].list[subIndex].list}
+                    onClick={handleThirdClick}
+                  >
+                    {tabList[index].list[subIndex].list.map(
+                      (third, thirdIndex) => (
+                        <AtTabsPane
+                          tabDirection="vertical"
+                          key={thirdIndex}
+                          current={state.thirdCurrent}
+                          index={thirdIndex}
+                        >
+                          <Package books={books}></Package>
+                        </AtTabsPane>
+                      )
+                    )}
+                  </AtTabs>
+                </View>
               </AtTabsPane>
             ))}
           </AtTabs>

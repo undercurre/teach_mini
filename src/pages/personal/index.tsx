@@ -1,9 +1,17 @@
 import Taro from "@tarojs/taro";
-import { View, Text, Button, Image, Input } from "@tarojs/components";
+import {
+  View,
+  Text,
+  Button,
+  Image,
+  Input,
+  ScrollView,
+} from "@tarojs/components";
 import { useEffect, useState } from "react";
 import "./index.scss";
 import { getUserInfo, WechatUserInfo } from "../../apis/user";
 import { localStg } from "../../service/storage/local";
+import Package from "../../components/Package";
 
 const Personal = () => {
   const [userInfo, setUserInfo] = useState<WechatUserInfo>({
@@ -60,6 +68,60 @@ const Personal = () => {
     });
   }
 
+  const [books, setBooks] = useState<{ title: string; image: string }[]>([]);
+
+  function fetchBookData() {
+    const booksRes = [
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+    ];
+    setBooks(() => {
+      return [...booksRes];
+    });
+  }
+
+  useEffect(() => {
+    fetchBookData();
+  }, []);
+
   return (
     <View className="personal-container">
       <View className="user-info">
@@ -78,16 +140,10 @@ const Personal = () => {
           onInput={onNickNameReview}
         />
       </View>
-      <View className="user-details">
-        <View className="detail-item">
-          <Text className="label">Email: </Text>
-          <Text className="value">{userInfo.user.email}</Text>
-        </View>
-        <View className="detail-item">
-          <Text className="label">Phone: </Text>
-          <Text className="value">{userInfo.user.phone}</Text>
-        </View>
-      </View>
+      <Text style="margin: 10px; align-self: flex-start">已购资源：</Text>
+      <ScrollView style="height: 55vh" scrollY scrollWithAnimation>
+        <Package books={books}></Package>
+      </ScrollView>
       <Button className="btn logout-btn" onClick={handleLogout}>
         退出登录
       </Button>
