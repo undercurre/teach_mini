@@ -92,6 +92,60 @@ const Index = () => {
     });
   }
 
+  const [books, setBooks] = useState<{ title: string; image: string }[]>([]);
+
+  function fetchBookData() {
+    const booksRes = [
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+      {
+        title: "马克思主义",
+        image:
+          "https://img1.baidu.com/it/u=97245084,555945856&fm=253&fmt=auto&app=138&f=JPEG?w=220&h=310",
+      },
+    ];
+    setBooks(() => {
+      return [...booksRes];
+    });
+  }
+
+  useEffect(() => {
+    fetchBookData();
+  }, [state.thirdCurrent]);
+
   return (
     <AtTabs
       current={state.current}
@@ -129,8 +183,11 @@ const Index = () => {
                         index={thirdIndex}
                       >
                         <View style="display: grid; grid-template-rows: 1fr; grid-template-columns: 1fr 1fr 1fr;">
-                          {subItem.list.map((item) => (
-                            <ClassItem name={item.name}></ClassItem>
+                          {books.map((item) => (
+                            <ClassItem
+                              image={item.image}
+                              name={item.title}
+                            ></ClassItem>
                           ))}
                         </View>
                       </AtTabsPane>
