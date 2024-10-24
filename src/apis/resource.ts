@@ -2,7 +2,7 @@ import ApiService from "../service/request/http";
 
 const catalogApiService = new ApiService("http://129.204.147.56:8080");
 
-type CataItem = {
+export type CataItem = {
   id: number;
   name: string;
   keywords: string;

@@ -6,7 +6,7 @@ import { getUserInfo } from "./apis/user";
 
 function App({ children }: PropsWithChildren<any>) {
   useLaunch(() => {
-    getUserInfo();
+    // getUserInfo();
   });
 
   // children 是将要会渲染的页面

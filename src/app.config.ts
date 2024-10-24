@@ -33,12 +33,12 @@ export default defineAppConfig({
         iconPath: "assets/icons/custom.png",
         selectedIconPath: "assets/icons/custom_selected.png",
       },
-      {
-        pagePath: "pages/cart/index",
-        text: "购物车",
-        iconPath: "assets/icons/cart.png",
-        selectedIconPath: "assets/icons/cart_selected.png",
-      },
+      // {
+      //   pagePath: "pages/cart/index",
+      //   text: "购物车",
+      //   iconPath: "assets/icons/cart.png",
+      //   selectedIconPath: "assets/icons/cart_selected.png",
+      // },
       {
         pagePath: "pages/personal/index",
         text: "个人",
